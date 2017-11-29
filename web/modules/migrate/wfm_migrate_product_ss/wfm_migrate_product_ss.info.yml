@@ -1,0 +1,12 @@
+name: WFM Migrate Product Store Specific
+description: Migrates the store specific product info from a mysql table into the product content type of this site
+package: WFM Migrate
+
+type: module
+core: 8.x
+
+dependencies:
+  - migrate
+
+version: 1.0
+

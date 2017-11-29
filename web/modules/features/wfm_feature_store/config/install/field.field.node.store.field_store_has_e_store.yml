@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store_has_e_store
+    - node.type.store
+id: node.store.field_store_has_e_store
+field_name: field_store_has_e_store
+entity_type: node
+bundle: store
+label: 'Store Has E-Store'
+description: 'Check if this store has an e-store page for online shopping.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Store has e-store'
+  off_label: 'Store does not have e-store'
+field_type: boolean

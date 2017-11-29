@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.recipe.field_recipe_body
+    - field.field.node.recipe.field_recipe_featured
+    - field.field.node.recipe.field_recipe_hero_image
+    - field.field.node.recipe.field_recipe_ingredients
+    - field.field.node.recipe.field_recipe_mongo_id
+    - field.field.node.recipe.field_recipe_nutritional_info
+    - field.field.node.recipe.field_recipe_short_description
+    - node.type.recipe
+  module:
+    - image
+    - text
+    - user
+id: node.recipe.default
+targetEntityType: node
+bundle: recipe
+mode: default
+content:
+  field_recipe_body:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_recipe_hero_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_recipe_ingredients:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_recipe_nutritional_info:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_recipe_short_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_recipe_featured: true
+  field_recipe_mongo_id: true

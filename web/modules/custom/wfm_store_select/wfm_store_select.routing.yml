@@ -1,0 +1,6 @@
+wfm_store_select:
+  path: '/select-my-store/{tlc}'
+  defaults:
+    _controller: '\Drupal\wfm_store_select\Controller\WfmStoreSelectController::selectMe'
+  requirements:
+    _permission: 'access content'

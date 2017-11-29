@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: recipe_260x160
+label: 'Recipe 260x160'
+effects:
+  71fe9599-9101-4f8a-8d00-fc959eeb6e42:
+    uuid: 71fe9599-9101-4f8a-8d00-fc959eeb6e42
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 260
+      height: 160

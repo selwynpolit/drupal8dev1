@@ -1,0 +1,39 @@
+# Migration configuration for product content.
+id: product_ss_node
+label: Product store-specific info from mysql db
+migration_group: wfm
+source:
+  plugin: product_ss_node
+  key: default
+destination:
+  plugin: entity:node
+process:
+  # Hardcode the destination node type (bundle) as 'migrate_example_recipe'.
+  type:
+    plugin: default_value
+    default_value: prod_store_specific  #content type
+  title: ssid
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  uid:
+    plugin: default_value
+    default_value: 1
+  sticky:
+    plugin: default_value
+    default_value: 0
+  field_ss_available: available
+  field_ss_currency: currency
+  field_ss_identifier: identifier
+  field_ss_price: price
+  field_ss_price_multiple: pricemultiple
+  field_ss_sale_price_multiple: salepricemultiple
+  field_ss_retail_uom: retailuom
+  field_ss_sale_end: saleend
+  field_ss_sale_price: saleprice
+  field_ss_sale_start: salestart
+  field_ss_tlc: tlc
+  field_ss_product_ref: product_ref_id
+  field_ss_store_ref: store_ref_id
+

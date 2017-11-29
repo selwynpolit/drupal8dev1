@@ -1,0 +1,24 @@
+# Migration configuration for product pictures.
+id: product_pic
+label: Product photos from whereever they are into Drupal 8 file entities
+migration_group: wfm
+source:
+  plugin: product_pic
+  key: default
+destination:
+  plugin: entity:file
+  urlencode: true
+  source_path_property: url
+#  destination_path_property: dest_path
+  destination_path_property: 'uri'   #note. this must always be uri - dammit!!!
+process:
+  uid:
+    plugin: default_value
+    default_value: 1
+  uri: filename_with_path  #need public:// prepended otherwise files get put in docroot.
+
+
+
+
+
+

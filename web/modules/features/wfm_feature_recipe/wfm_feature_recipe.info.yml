@@ -1,0 +1,16 @@
+name: 'Feature Recipe'
+description: 'Provide Recipe content type and related configuration. A full recipe for a meal.'
+type: module
+core: 8.x
+dependencies:
+  - image
+  - node
+  - path
+  - text
+  - user
+  - wfm_feature_general
+  - wfm_feature_recipe
+version: 8.x-1.0
+package: WFM
+features:
+  bundle: wfm

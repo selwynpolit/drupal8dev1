@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.product.body
+    - field.field.node.product.field_product_brand
+    - field.field.node.product.field_product_description
+    - field.field.node.product.field_product_identifier
+    - field.field.node.product.field_product_images
+    - field.field.node.product.field_product_size
+    - field.field.node.product.field_product_subteam
+    - field.field.node.product.field_product_subteamnumber
+    - field.field.node.product.field_product_unit_of_measure
+    - node.type.product
+  module:
+    - text
+    - user
+id: node.product.teaser
+targetEntityType: node
+bundle: product
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_product_brand: true
+  field_product_description: true
+  field_product_identifier: true
+  field_product_images: true
+  field_product_size: true
+  field_product_subteam: true
+  field_product_subteamnumber: true
+  field_product_unit_of_measure: true

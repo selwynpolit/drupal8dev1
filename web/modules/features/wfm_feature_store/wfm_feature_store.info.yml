@@ -1,0 +1,28 @@
+name: 'Feature Store'
+description: 'Provide Store content type and related configuration. A physical location where products are displayed and sold.'
+type: module
+core: 8.x
+dependencies:
+  - address
+  - image
+  - link
+  - node
+  - options
+  - path
+  - telephone
+  - text
+  - user
+  - wfm_feature_general
+  - wfm_feature_store
+version: 8.x-1.0
+package: WFM
+features:
+  bundle: wfm
+  excluded:
+    - views.view.duplicate_of_content
+  required:
+    - core.entity_form_display.taxonomy_term.regions.default
+    - core.entity_view_display.taxonomy_term.regions.default
+    - field.field.taxonomy_term.regions.field_region_code
+    - taxonomy.vocabulary.regions
+    - field.storage.taxonomy_term.field_region_code

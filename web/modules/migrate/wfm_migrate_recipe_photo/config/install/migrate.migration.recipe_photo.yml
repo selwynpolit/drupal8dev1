@@ -1,0 +1,27 @@
+# Migration configuration for recipe photos.
+id: recipe_photo
+label: Migrate Recipes photos from Sage into Drupal 8 file entities
+migration_group: wfm
+source:
+  plugin: wfm_migrate_recipe_photo
+destination:
+  plugin: entity:file
+  urlencode: true
+  source_path_property: uri
+#  destination_path_property: dest_path
+  destination_path_property: uri
+process:
+  uid:
+    plugin: default_value
+    default_value: 1
+  uri: filename_with_path  #need public:// prepended otherwise files get put in docroot.
+
+#  destination_path: destination_path
+#  source_path: filename
+#  filemime: filemime
+#  created: created
+#  changed: created
+
+
+
+

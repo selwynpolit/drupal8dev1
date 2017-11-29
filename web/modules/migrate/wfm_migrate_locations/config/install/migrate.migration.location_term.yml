@@ -1,0 +1,24 @@
+# Migration configuration for location vocabulary.
+id: location_term
+label: Location terms from mysql db
+migration_group: wfm
+source:
+  plugin: location_term
+  key: default
+destination:
+  plugin: entity:taxonomy_term
+process:
+  name: name
+#  description:
+  vid:
+    plugin: default_value
+    default_value: locations
+  parent: parent
+  field_tlc: tlc
+  field_store_name: store_name
+  field_business_unit: business_unit
+
+
+
+
+

@@ -1,0 +1,19 @@
+name: 'Feature General'
+description: 'General Purpose catch all feature'
+type: module
+core: 8.x
+dependencies:
+  - block_content
+  - image
+  - system
+  - user
+  - wfm_feature_general
+version: 8.x-1.0
+package: WFM
+features:
+  bundle: wfm
+  required:
+    - block.block.wftwitterblock
+    - system.menu.top-menu
+    - field.field.user.user.field_user_tlc
+    - field.storage.user.field_user_tlc

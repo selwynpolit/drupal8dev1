@@ -1,0 +1,11 @@
+store.select:
+  version: 1.x
+  js:
+    js/wfm-store-select.js: {}
+  dependencies:
+        - core/jquery
+        - core/drupalSettings
+#        - core/drupal.ajax
+#  css:
+#    theme:
+#      css/wfm-store-select.css: {}

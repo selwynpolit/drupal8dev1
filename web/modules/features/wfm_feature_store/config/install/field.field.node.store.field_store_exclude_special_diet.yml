@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store_exclude_special_diet
+    - node.type.store
+id: node.store.field_store_exclude_special_diet
+field_name: field_store_exclude_special_diet
+entity_type: node
+bundle: store
+label: 'Store Exclude Special Diet Links'
+description: 'Check this box if we do not wish to display special diet links for this store.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Exclude Special Diet Links'
+  off_label: 'Include Special Diet Links'
+field_type: boolean

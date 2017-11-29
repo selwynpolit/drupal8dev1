@@ -1,0 +1,12 @@
+name: WFM Migrate Locations
+description: Migrates the locations taxonomy from a mysql table into the d8 locations taxonomy
+package: WFM Migrate
+
+type: module
+core: 8.x
+
+dependencies:
+  - migrate
+
+version: 1.0
+

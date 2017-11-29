@@ -1,0 +1,74 @@
+# Migration configuration for store content.
+id: store_node
+label: Stores from Sage
+migration_group: wfm
+source:
+  plugin: wfm_migrate_store
+destination:
+  plugin: entity:node
+process:
+  type:
+    plugin: default_value
+    default_value: store
+  title: name
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  uid:
+    plugin: default_value
+    default_value: 1
+  sticky:
+    plugin: default_value
+    default_value: 0
+  field_store_id: _id
+  field_store_tlc: tlc
+  field_store_twitter_username: twitter
+  field_store_geo_x: geox
+  field_store_geo_y: geoy
+  field_store_hours: hours
+  "field_store_address/address_line1": address
+  "field_store_address/address_line2": address2
+  "field_store_address/locality": city
+  "field_store_address/administrative_area": state
+  "field_store_address/postal_code": zip_code
+  "field_store_address/country_code": country
+  field_store_pinterest_url:
+    plugin: default_value
+    default_value: 'https://www.pinterest.com/wholefoods/'
+  field_store_in_development:
+    plugin: default_value
+    default_value: 0
+  field_store_tumblr_url:
+    plugin: default_value
+    default_value: 'http://wholefoods.tumblr.com/'
+  field_store_twitter_username: twitter
+  field_store_facebook_fan_page: facebook
+  field_store_phone: phone
+  field_store_fax_number: fax
+  field_store_flickr_url: flickr
+
+#  field_store_nickname: display_name
+  "field_store_sells_alcohol/value": has_alcohol
+
+#  field_store_region: region  #TODO: fix this
+
+
+
+
+#  field_store_front_image:
+#  field_store_google_plus_url:
+#  field_store_has_e_store
+#  field_store_has_wellness_club:
+#  field_store_holiday_hours:
+#  field_store_holiday_hours_headin
+#  field_store_instagram_url
+
+
+
+#  'field_recipe_nutritional_info/value': basic_nutrition
+#  'field_recipe_nutritional_info/format':
+#    plugin: default_value
+#    default_value: 'full_html'
+
+

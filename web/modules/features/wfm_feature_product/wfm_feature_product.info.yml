@@ -1,0 +1,19 @@
+name: 'Feature Product'
+description: 'Provides Product content type and related configuration. An item that will be carried in the store.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - file
+  - image
+  - menu_ui
+  - migrate
+  - node
+  - path
+  - text
+  - user
+  - wfm_migrate_product
+  - wfm_migrate_product_pic
+  - wfm_migrate_product_ss
+version: 8.x-1.0
+package: WFM

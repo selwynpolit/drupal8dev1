@@ -1,0 +1,16 @@
+{
+  "name": "wfm/api/sageclient",
+  "type": "drupal-module",
+  "description": "Sage API Integration",
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.3.0",
+    "wfmdigitalweb/sageapiphp": "~1.1"
+  },
+  "repositories": [
+    {
+      "url": "git@bitbucket.org:wfmdigitalweb/sage-api-php-library.git",
+      "type": "git"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.recipe.field_recipe_body
+    - field.field.node.recipe.field_recipe_featured
+    - field.field.node.recipe.field_recipe_hero_image
+    - field.field.node.recipe.field_recipe_ingredients
+    - field.field.node.recipe.field_recipe_mongo_id
+    - field.field.node.recipe.field_recipe_nutritional_info
+    - field.field.node.recipe.field_recipe_short_description
+    - node.type.recipe
+  module:
+    - user
+id: node.recipe.teaser
+targetEntityType: node
+bundle: recipe
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_recipe_body: true
+  field_recipe_featured: true
+  field_recipe_hero_image: true
+  field_recipe_ingredients: true
+  field_recipe_mongo_id: true
+  field_recipe_nutritional_info: true
+  field_recipe_short_description: true

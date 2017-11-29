@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store_fax_number
+    - node.type.store
+  module:
+    - telephone
+id: node.store.field_store_fax_number
+field_name: field_store_fax_number
+entity_type: node
+bundle: store
+label: 'Store Fax Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

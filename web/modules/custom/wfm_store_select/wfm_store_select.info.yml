@@ -1,0 +1,9 @@
+name: 'Store Selector'
+description: 'Store selection functionality'
+type: module
+core: 8.x
+libraries:
+#  - wfm_store_select/wfm_store_select
+  - wfm_store_select/store.select
+version: 8.x-1.0
+package: WFM

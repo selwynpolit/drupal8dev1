@@ -1,0 +1,12 @@
+name: WFM Migrate Product
+description: Migrates the products from a mysql table into the product content type of this site
+package: WFM Migrate
+
+type: module
+core: 8.x
+
+dependencies:
+  - migrate
+
+version: 1.0
+

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:cb047d26-dfdb-4a6a-b35a-90b07105adff'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: wftwitterblock
+theme: bartik
+region: sidebar_second
+weight: null
+provider: null
+plugin: 'block_content:cb047d26-dfdb-4a6a-b35a-90b07105adff'
+settings:
+  id: 'block_content:cb047d26-dfdb-4a6a-b35a-90b07105adff'
+  label: 'WF twitter block'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

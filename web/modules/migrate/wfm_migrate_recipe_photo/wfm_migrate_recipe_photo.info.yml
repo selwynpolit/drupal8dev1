@@ -1,0 +1,8 @@
+name: WFM Migrate Recipe Photos
+description: Migrates the photos in recipes from Sage into the recipe content type of this site
+package: WFM Migrate
+type: module
+core: 8.x
+dependecies:
+  - migrate
+version: 1.0

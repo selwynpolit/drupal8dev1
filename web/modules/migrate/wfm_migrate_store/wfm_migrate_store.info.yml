@@ -1,0 +1,11 @@
+name: WFM Migrate Store
+description: Migrates the stores from Sage into the store content type of this site
+package: WFM Migrate
+
+type: module
+core: 8.x
+
+dependecies:
+  - migrate
+
+version: 1.0-beta1

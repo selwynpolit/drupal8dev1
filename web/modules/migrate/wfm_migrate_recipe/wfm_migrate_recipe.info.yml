@@ -1,0 +1,11 @@
+name: WFM Migrate Recipe
+description: Migrates the recipes from Sage into the recipe content type of this site
+package: WFM Migrate
+
+type: module
+core: 8.x
+
+dependecies:
+  - migrate
+
+version: 1.0-beta1

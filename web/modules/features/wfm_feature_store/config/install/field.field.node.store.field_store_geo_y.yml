@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store_geo_y
+    - node.type.store
+id: node.store.field_store_geo_y
+field_name: field_store_geo_y
+entity_type: node
+bundle: store
+label: 'Store Geo Y'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

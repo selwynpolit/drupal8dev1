@@ -1,0 +1,192 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.store.field_store_about
+    - field.field.node.store.field_store_add_holiday_special_
+    - field.field.node.store.field_store_address
+    - field.field.node.store.field_store_exclude_special_diet
+    - field.field.node.store.field_store_facebook_fan_page
+    - field.field.node.store.field_store_fax_number
+    - field.field.node.store.field_store_flickr_url
+    - field.field.node.store.field_store_front_image
+    - field.field.node.store.field_store_geo_x
+    - field.field.node.store.field_store_geo_y
+    - field.field.node.store.field_store_google_plus_url
+    - field.field.node.store.field_store_has_e_store
+    - field.field.node.store.field_store_has_wellness_club
+    - field.field.node.store.field_store_holiday_hours
+    - field.field.node.store.field_store_holiday_hours_headin
+    - field.field.node.store.field_store_hours
+    - field.field.node.store.field_store_id
+    - field.field.node.store.field_store_in_development
+    - field.field.node.store.field_store_instagram_url
+    - field.field.node.store.field_store_nickname
+    - field.field.node.store.field_store_opening_soon
+    - field.field.node.store.field_store_phone
+    - field.field.node.store.field_store_pinterest_url
+    - field.field.node.store.field_store_region
+    - field.field.node.store.field_store_sells_alcohol
+    - field.field.node.store.field_store_tlc
+    - field.field.node.store.field_store_tumblr_url
+    - field.field.node.store.field_store_twitter_username
+    - node.type.store
+  module:
+    - address
+    - image
+    - link
+    - telephone
+    - text
+    - user
+id: node.store.default
+targetEntityType: node
+bundle: store
+mode: default
+content:
+  field_store_about:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_store_address:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+  field_store_facebook_fan_page:
+    weight: 8
+    label: inline
+    settings:
+      trim_length: 80
+      target: _blank
+      url_only: false
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+    type: link
+  field_store_fax_number:
+    weight: 6
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+  field_store_flickr_url:
+    weight: 11
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_store_front_image:
+    weight: 0
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_store_google_plus_url:
+    weight: 10
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_store_holiday_hours:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_store_hours:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_store_instagram_url:
+    weight: 14
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_store_phone:
+    weight: 5
+    label: inline
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+  field_store_pinterest_url:
+    weight: 13
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_store_sells_alcohol:
+    weight: 7
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_store_tumblr_url:
+    weight: 15
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_store_twitter_username:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_store_add_holiday_special_: true
+  field_store_exclude_special_diet: true
+  field_store_geo_x: true
+  field_store_geo_y: true
+  field_store_has_e_store: true
+  field_store_has_wellness_club: true
+  field_store_holiday_hours_headin: true
+  field_store_id: true
+  field_store_in_development: true
+  field_store_nickname: true
+  field_store_opening_soon: true
+  field_store_region: true
+  field_store_tlc: true

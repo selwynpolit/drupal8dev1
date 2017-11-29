@@ -1,0 +1,5 @@
+name: sage_api
+type: module
+description: Sage API Integration
+core: 8.x
+package: WFM Migrate

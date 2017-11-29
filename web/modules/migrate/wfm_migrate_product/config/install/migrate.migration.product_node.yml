@@ -1,0 +1,37 @@
+# Migration configuration for product content.
+id: product_node
+label: Products from Sage stored in mysql db
+migration_group: wfm
+source:
+  plugin: product_node
+  key: default
+destination:
+  plugin: entity:node
+process:
+  # Hardcode the destination node type (bundle) as 'migrate_example_recipe'.
+  type:
+    plugin: default_value
+    default_value: product  #content type
+  title: description
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  uid:
+    plugin: default_value
+    default_value: 1
+  sticky:
+    plugin: default_value
+    default_value: 0
+  field_title: description
+  field_product_subteamnumber: subteamnumber
+  field_product_subteam: subteam
+  field_product_identifier: identifier
+  field_product_brand: brand
+  field_product_size: size
+  field_product_unit_of_measure: uom
+  field_product_images: images
+
+
+
+

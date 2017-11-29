@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store_geo_x
+    - node.type.store
+id: node.store.field_store_geo_x
+field_name: field_store_geo_x
+entity_type: node
+bundle: store
+label: 'store Geo X'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

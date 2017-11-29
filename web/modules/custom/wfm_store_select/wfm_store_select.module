@@ -1,0 +1,19 @@
+<?php
+function wfm_store_select_page_attachments_alter(array &$page) {
+  $page['#attached']['library'][] = 'wfm_store_select/store.select';
+}
+
+
+// Ignore the calls below - they don't work.
+//function wfm_store_select_page_alter(&$page) {
+//  drupal_set_message('in hook_page_alter');
+//  //Render the library as laid out in wfm_store_select.libraries.yml
+//  //Maybe check if we only want to do it on page 'store-list2'
+//  $page['#attached']['library'][] = 'wfm_store_select/store_select';
+//}
+//
+//function wfm_store_select_page_build(&$page) {
+//  drupal_set_message('in hook page build');
+//  $path = drupal_get_path('module', 'wfm_store_select');
+//  $page['#attached']['js'][$path . 'js/wfm_store_select.js'] = array('every_page' => TRUE);
+//}
