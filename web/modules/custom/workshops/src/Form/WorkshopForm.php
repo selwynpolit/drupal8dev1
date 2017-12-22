@@ -1,23 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: selwyn
- * Date: 12/19/17
- * Time: 12:15 PM
- */
 
 namespace Drupal\workshops\Form;
 
-
-use Drupal\Core\Database\TransactionNameNonUniqueException;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\workshops\selwyn\WorkshopEvent;
 
-
+/**
+ * Class WorkshopForm.
+ *
+ * @package Drupal\workshops\Form
+ */
 class WorkshopForm extends FormBase {
-
 
   /**
    * @inheritDoc
@@ -47,11 +42,11 @@ class WorkshopForm extends FormBase {
       '#required' => TRUE,
     ];
 
-    $form['remove_workshops'] = array(
+    $form['remove_workshops'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Remove all existing workshops first.'),
       '#default_value' => 1,
-    );
+    ];
 
     $form['submit'] = [
       '#type' => 'submit',
@@ -62,9 +57,13 @@ class WorkshopForm extends FormBase {
   }
 
   /**
+   * Split string into an array of lines.
+   *
    * @param string $str
+   *   The string.
    *
    * @return array
+   *   The array of lines.
    */
   private function buildWorkshopArray(string $str) {
     $lines = preg_split("/\\r\\n|\\r|\\n/", $str);
@@ -74,18 +73,17 @@ class WorkshopForm extends FormBase {
     foreach ($lines as $line) {
       if (!empty($line)) {
         $current_workshop[] = $line;
-      } else {
-        if (count($current_workshop)>=4) {
-          $workshops [] = $current_workshop;
+      }
+      else {
+        if (count($current_workshop) >= 4) {
+          $workshops[] = $current_workshop;
         }
         $current_workshop = [];
       }
     }
     return $workshops;
+
   }
-
-
-
 
   /**
    * @inheritDoc
@@ -102,24 +100,27 @@ class WorkshopForm extends FormBase {
     $entities = $storage_handler->loadMultiple($result);
     $storage_handler->delete($entities);
 
-    //Build an array of proposed workshops and store them in the db.
+    // Build an array of proposed workshops and store them in the db.
     $proposed_workshops = $this->buildWorkshopArray($form['proposed_workshops']['#value']);
     $this->storeWorkshops($proposed_workshops, "Proposed");
     dsm("Processed " . count($proposed_workshops) . " proposed workshops.");
 
-    //Build an array of scheduled workshops and store them in the db.
+    // Build an array of scheduled workshops and store them in the db.
     $scheduled_workshops = $this->buildWorkshopArray($form['scheduled_workshops']['#value']);
     dsm("Processed " . count($scheduled_workshops) . " scheduled workshops.");
     $this->storeWorkshops($scheduled_workshops, "Scheduled");
 
   }
 
-
   /**
-   * @param $workshops
+   * Store the workshop info in the drupal db.
+   *
+   * @param array $workshops
+   *   Workshops object.
    * @param string $wsType
+   *   Type of workshop.
    */
-  private function storeWorkshops($workshops, $wsType = "Proposed") {
+  private function storeWorkshops(array $workshops, $wsType = "Proposed") {
     foreach ($workshops as $workshop) {
       $ws = new WorkshopEvent($workshop, $wsType);
       $wsData = [];
@@ -127,7 +128,7 @@ class WorkshopForm extends FormBase {
       if ($rc) {
         $wsNode = Node::create($wsData);
         $wsNode->save();
-        //        dsm($ws->getTitle());
+        // dsm($ws->getTitle());
       }
     }
   }
@@ -140,12 +141,11 @@ class WorkshopForm extends FormBase {
     parent::validateForm($form, $form_state);
 
     if (!$form_state->isValueEmpty('proposed_workshops')) {
-      if (strlen($form_state->getValue('proposed_workshops')) <=20) {
+      if (strlen($form_state->getValue('proposed_workshops')) <= 20) {
         $form_state->setErrorByName('proposed_workshops', t('Proposed workshops seems too short (<21 chars)'));
       }
     }
 
   }
-
 
 }
