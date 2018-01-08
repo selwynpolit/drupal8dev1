@@ -2,6 +2,8 @@
 
 namespace Drupal\workshops\selwyn;
 
+use Drupal\node\Entity\Node;
+
 /**
  * Class WorkshopEvent.
  *
@@ -14,7 +16,7 @@ class WorkshopEvent {
   private $locationString;
   private $country;
   private $title;
-  private $leader;
+  private $leaders;
   private $audience;
   private $originalArray;
   private $type;
@@ -79,7 +81,7 @@ class WorkshopEvent {
       'title' => $this->title,
       'field_workshop_type' => $this->type,
       'field_workshop_location' => $this->locationString,
-      'field_workshop_leader' => $this->leader,
+      'field_workshop_leader_ref' => $this->leaders,
       'field_workshop_audience' => $this->audience,
       'field_workshop_country' => $this->country,
       'field_workshop_start_date' => $this->startDate->format('Y-m-d'),
@@ -162,13 +164,23 @@ class WorkshopEvent {
   }
 
   /**
-   * Build Leader.
+   * Build Leaders array from a string that could have up to 3 leaders in it.
    *
-   * @param string $str
+   * @param string $leaderString
    *   Leader string.
    */
-  public function buildLeader(string $str) {
-    $this->leader = $str;
+  public function buildLeader(string $leaderString) {
+//    $this->leader = $str;
+    $leaders = null;
+    if (strlen($leaderString)) {
+      $leaders = str_replace("assisted by", "&", $leaderString);
+      $leaders = str_replace(", ", "&", $leaders);
+      $leaders = str_replace("&& ", "&", $leaders);
+      $leaders = explode('&', $leaders);
+      $leaders = array_map('trim', $leaders);
+      $leaders = array_map('rtrim', $leaders);
+    }
+    $this->leaders = $leaders;
   }
 
   /**
@@ -226,5 +238,133 @@ class WorkshopEvent {
     $this->endDate = \DateTime::createFromFormat('j-M-Y H:i:s', $date_str);
 
   }
+
+  public function processLeaders() {
+    // Loop thru the leaders and look them up in the drupal db
+    // If not there, look them up on the rc.org website and get the confidence level
+    // store them in the drupal db as workshop leader content
+    // Update the $wsData array with the nids of the leaders... will that work?
+
+    for ($i=0;$i<count($this->leaders);$i++) {
+      // Lookup in drupal to see if it exists and grab the nid
+      $query = \Drupal::entityQuery('node');
+
+      // Some strings need slashes before special characters ie. double quotes.
+      $leader = $this->convertSmartQuotes($this->leaders[$i]);
+      $leader = addslashes($leader);
+
+      $query->condition('title', '%'.$leader.'%', 'LIKE')
+        ->condition('type', 'workshop_leader');
+      $nids = $query->execute();
+
+      if ($nids) {
+        $nid = current($nids);
+        $this->leaders[$i] = $nid;
+        continue;
+      }
+
+      // If none found, go look them up on the rc website
+      if (count($nids) === 0) {
+        $rc = $this->validateLeader($this->leaders[$i]);
+        // If found - write the leader to the db
+        if ($rc == TRUE) {
+          $leaderNode = Node::create([
+            'type' => 'workshop_leader',
+            'title' => $this->leaders[$i],
+            'field_workshop_leader_confidence' => 4,
+          ]);
+          $leaderNode->save();
+          $nid = $leaderNode->id();
+          if ($nid) {
+            $this->leaders[$i] = $nid;
+          }
+        }
+
+      }
+
+    }
+  }
+
+  /**
+   * Check on the RC website if this is a valid leader.
+   *
+   * @param string $leaderName
+   *   The name of the leader.
+   *
+   * @return bool
+   *   True = leader name is valid.
+   */
+  private function validateLeader(string $leaderName) {
+    if (empty($leaderName)) {
+      return false;
+    }
+
+    $content_div = "";
+    $doc = new \DOMDocument();
+
+    $plusName = str_replace(' ', '+', $leaderName);
+    $plusName = '%22' . $plusName . '%22';
+    $url = 'https://www.rc.org/page/search?search=' . $plusName;
+    $scrape = file_get_contents($url);
+
+    // set error level to avoid silly warnings when loading html from site.
+    $internalErrors = libxml_use_internal_errors(true);
+    $doc->loadHTML($scrape);
+    // Restore error level.
+    libxml_use_internal_errors($internalErrors);
+
+    $divs = $doc->getElementsByTagName('div');
+
+    // Loop through the DIVs looking for one with an id of "content".
+    /* @var $div \DOMElement */
+    foreach($divs as $div) {
+      if ($div->getAttribute('id') === 'content') {
+        $content_div=$div->nodeValue;
+        break;
+      }
+    }
+
+    // Look in the content div for the leader's name.
+    if (strlen(stristr($content_div, $leaderName))>0) {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Convert smart quotes (including mac quotes) to regular double quotes.
+   *
+   * You could do this:
+   *  $leader = str_replace('”', '"', $leader);
+   *  $leader = str_replace('“', '"', $leader);
+   *
+   */
+  private function convertSmartQuotes($string)
+  {
+    $search = array(
+      chr(145),
+      chr(146),
+      chr(147),
+      chr(148),
+      chr(151),
+      chr(93),
+      '“',
+      '”',
+    );
+
+    $replace = array(
+      "'",
+      "''",
+      '""',
+      '""',
+      '-',
+      '"',
+      '"',
+      '"',
+      );
+
+    return str_replace($search, $replace, $string);
+  }
+
 
 }

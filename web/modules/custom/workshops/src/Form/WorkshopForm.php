@@ -25,13 +25,27 @@ class WorkshopForm extends FormBase {
    * @inheritDoc
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $proposed_workshops = \Drupal::state()->get('workshops.proposed_workshops');
+    $default_proposed_workshops = "";
+    foreach ($proposed_workshops as $workshop) {
+      $default_proposed_workshops = $default_proposed_workshops.implode("\n", $workshop);
+    }
+
+    $default_scheduled_workshops = "";
+    $scheduled_workshops = \Drupal::state()->get('workshops.scheduled_workshops');
+    foreach ($scheduled_workshops as $workshop) {
+      $default_scheduled_workshops = $default_scheduled_workshops.implode("\n", $workshop);
+    }
+
     $form['proposed_workshops'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Proposed workshops'),
       '#rows' => 4,
       '#resizable' => 'both',
       '#description' => $this->t('Paste Proposed Workshops here'),
-      '#required' => TRUE,
+      '#default_value' => $default_proposed_workshops,
+//      '#default_value' => \Drupal::state()->get('workshops.proposed_workshops'),
+      '#required' => FALSE,
     ];
     $form['scheduled_workshops'] = [
       '#type' => 'textarea',
@@ -39,13 +53,14 @@ class WorkshopForm extends FormBase {
       '#rows' => 4,
       '#resizable' => 'both',
       '#description' => $this->t('Paste Scheduled Workshops here'),
-      '#required' => TRUE,
+      '#default_value' => $default_scheduled_workshops,
+      '#required' => FALSE,
     ];
 
     $form['remove_workshops'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Remove all existing workshops first.'),
-      '#default_value' => 1,
+      '#default_value' => 0,
     ];
 
     $form['submit'] = [
@@ -75,14 +90,19 @@ class WorkshopForm extends FormBase {
         $current_workshop[] = $line;
       }
       else {
+        // Blank line indicates we're probably on a new workshop
         if (count($current_workshop) >= 4) {
           $workshops[] = $current_workshop;
         }
         $current_workshop = [];
       }
+
+    }
+    //If there were no blank lines, there could be a workshop left over here.
+    if (count($current_workshop)) {
+      $workshops[] = $current_workshop;
     }
     return $workshops;
-
   }
 
   /**
@@ -90,25 +110,34 @@ class WorkshopForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
+    // Delete existing workshop nodes if this item is checked.
     if ($form['remove_workshops']['#value']) {
       $result = \Drupal::entityQuery("node")
         ->condition('type', 'workshop')
         ->execute();
+      $storage_handler = \Drupal::entityTypeManager()->getStorage("node");
+      $entities = $storage_handler->loadMultiple($result);
+      $storage_handler->delete($entities);
     }
 
-    $storage_handler = \Drupal::entityTypeManager()->getStorage("node");
-    $entities = $storage_handler->loadMultiple($result);
-    $storage_handler->delete($entities);
 
     // Build an array of proposed workshops and store them in the db.
     $proposed_workshops = $this->buildWorkshopArray($form['proposed_workshops']['#value']);
-    $this->storeWorkshops($proposed_workshops, "Proposed");
-    dsm("Processed " . count($proposed_workshops) . " proposed workshops.");
+    if (!empty($proposed_workshops)) {
+      //Save the values so they can appear next time.
+      \Drupal::state()->set('workshops.proposed_workshops', $proposed_workshops);
+      $this->storeWorkshops($proposed_workshops, "Proposed");
+      dsm("Processed " . count($proposed_workshops) . " proposed workshops.");
+    }
 
     // Build an array of scheduled workshops and store them in the db.
     $scheduled_workshops = $this->buildWorkshopArray($form['scheduled_workshops']['#value']);
-    dsm("Processed " . count($scheduled_workshops) . " scheduled workshops.");
-    $this->storeWorkshops($scheduled_workshops, "Scheduled");
+    if (!empty($scheduled_workshops)) {
+      //Save the values so they can appear next time.
+      \Drupal::state()->set('workshops.scheduled_workshops', $scheduled_workshops);
+      dsm("Processed " . count($scheduled_workshops) . " scheduled workshops.");
+      $this->storeWorkshops($scheduled_workshops, "Scheduled");
+    }
 
   }
 
@@ -116,16 +145,21 @@ class WorkshopForm extends FormBase {
    * Store the workshop info in the drupal db.
    *
    * @param array $workshops
-   *   Workshops object.
+   *   Array of workshop arrays.
    * @param string $wsType
    *   Type of workshop.
    */
   private function storeWorkshops(array $workshops, $wsType = "Proposed") {
     foreach ($workshops as $workshop) {
       $ws = new WorkshopEvent($workshop, $wsType);
+
+      //Process and Validate the leaders
+      $rc = $ws->processLeaders();
+
       $wsData = [];
       $rc = $ws->getNodeReady($wsData);
       if ($rc) {
+
         $wsNode = Node::create($wsData);
         $wsNode->save();
         // dsm($ws->getTitle());
