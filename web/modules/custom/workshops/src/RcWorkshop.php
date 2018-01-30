@@ -20,13 +20,10 @@ class RcWorkshop {
    * @var Drupal\Core\Datetime
    */
   protected $end_date;
-
-
   protected $location;
   protected $city;
   protected $state;
   protected $country;
-
   protected $target_audience;
   protected $title;
   protected $leader;

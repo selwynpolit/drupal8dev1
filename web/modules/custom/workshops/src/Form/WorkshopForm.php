@@ -5,7 +5,7 @@ namespace Drupal\workshops\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
-use Drupal\workshops\selwyn\WorkshopEvent;
+use Drupal\workshops\WorkshopEvent;
 
 /**
  * Class WorkshopForm.

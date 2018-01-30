@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\workshops\selwyn;
+namespace Drupal\workshops;
 
 use Drupal\node\Entity\Node;
 
