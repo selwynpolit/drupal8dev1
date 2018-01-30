@@ -25,35 +25,41 @@ class WorkshopForm extends FormBase {
    * @inheritDoc
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $proposed_workshops = \Drupal::state()->get('workshops.proposed_workshops');
-    $default_proposed_workshops = "";
-    foreach ($proposed_workshops as $workshop) {
-      $default_proposed_workshops = $default_proposed_workshops.implode("\n", $workshop);
-    }
 
-    $default_scheduled_workshops = "";
-    $scheduled_workshops = \Drupal::state()->get('workshops.scheduled_workshops');
-    foreach ($scheduled_workshops as $workshop) {
-      $default_scheduled_workshops = $default_scheduled_workshops.implode("\n", $workshop);
-    }
+//    // Retrieve the last saved value and format it to be usable.
+//    $proposed_workshops = \Drupal::state()->get('workshops.proposed_workshops');
+//    $default_proposed_workshops = "";
+//    foreach ($proposed_workshops as $workshop) {
+//      $default_proposed_workshops = $default_proposed_workshops.implode("\n", $workshop);
+//      $default_proposed_workshops .= "\n\n";
+//    }
+//
+//    // Retrieve the last saved value and format it to be usable.
+//    $default_scheduled_workshops = "";
+//    $scheduled_workshops = \Drupal::state()->get('workshops.scheduled_workshops');
+//    foreach ($scheduled_workshops as $workshop) {
+//      $default_scheduled_workshops = $default_scheduled_workshops.implode("\n", $workshop);
+//      $default_scheduled_workshops .= "\n\n";
+//    }
 
     $form['proposed_workshops'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Proposed workshops'),
-      '#rows' => 4,
+      '#rows' => 6,
       '#resizable' => 'both',
       '#description' => $this->t('Paste Proposed Workshops here'),
-      '#default_value' => $default_proposed_workshops,
-//      '#default_value' => \Drupal::state()->get('workshops.proposed_workshops'),
+//      '#default_value' => $default_proposed_workshops,
+      '#default_value' => \Drupal::state()->get('workshops.proposed_workshops'),
       '#required' => FALSE,
     ];
     $form['scheduled_workshops'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Scheduled workshops'),
-      '#rows' => 4,
+      '#rows' => 6,
       '#resizable' => 'both',
       '#description' => $this->t('Paste Scheduled Workshops here'),
-      '#default_value' => $default_scheduled_workshops,
+//      '#default_value' => $default_scheduled_workshops,
+      '#default_value' => \Drupal::state()->get('workshops.scheduled_workshops'),
       '#required' => FALSE,
     ];
 
@@ -124,8 +130,9 @@ class WorkshopForm extends FormBase {
     // Build an array of proposed workshops and store them in the db.
     $proposed_workshops = $this->buildWorkshopArray($form['proposed_workshops']['#value']);
     if (!empty($proposed_workshops)) {
-      //Save the values so they can appear next time.
-      \Drupal::state()->set('workshops.proposed_workshops', $proposed_workshops);
+      //Save the form values so they can appear next time.
+//      \Drupal::state()->set('workshops.proposed_workshops', $proposed_workshops);
+      \Drupal::state()->set('workshops.proposed_workshops', $form['proposed_workshops']['#value']);
       $this->storeWorkshops($proposed_workshops, "Proposed");
       dsm("Processed " . count($proposed_workshops) . " proposed workshops.");
     }
@@ -134,9 +141,10 @@ class WorkshopForm extends FormBase {
     $scheduled_workshops = $this->buildWorkshopArray($form['scheduled_workshops']['#value']);
     if (!empty($scheduled_workshops)) {
       //Save the values so they can appear next time.
-      \Drupal::state()->set('workshops.scheduled_workshops', $scheduled_workshops);
-      dsm("Processed " . count($scheduled_workshops) . " scheduled workshops.");
+//      \Drupal::state()->set('workshops.scheduled_workshops', $scheduled_workshops);
+      \Drupal::state()->set('workshops.scheduled_workshops', $form['scheduled_workshops']['#value']);
       $this->storeWorkshops($scheduled_workshops, "Scheduled");
+      dsm("Processed " . count($scheduled_workshops) . " scheduled workshops.");
     }
 
   }
@@ -154,7 +162,7 @@ class WorkshopForm extends FormBase {
       $ws = new WorkshopEvent($workshop, $wsType);
 
       //Process and Validate the leaders
-      $rc = $ws->processLeaders();
+      $ws->processLeaders();
 
       $wsData = [];
       $rc = $ws->getNodeReady($wsData);
