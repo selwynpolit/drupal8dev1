@@ -1,0 +1,17 @@
+services:
+ hello_world.salutation:
+   class: Drupal\hello_world\HelloWorldSalutation
+   arguments: ['@config.factory']
+
+ # listen to the kernel.request event and redirects it to the home page
+ # if a user with a certain role tries to access our Hello World page
+ hello_world.redirect_subscriber:
+   class: Drupal\hello_world\EventSubscriber\HelloWorldRedirectSubscriber
+   arguments: ['@current_user', '@current_route_match']
+   tags:
+     - {name: event_subscriber}
+ hello_world.logger.hello_world:
+   class: Drupal\hello_world\Logger\MailLogger
+   arguments: ['@logger.log_message_parser', '@config.factory']
+   tags:
+     - { name: logger }

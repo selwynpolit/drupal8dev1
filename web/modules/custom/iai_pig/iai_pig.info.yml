@@ -1,0 +1,7 @@
+name: Product Image Gallery
+description: Provide functionality to display product image glalleries based on images attached ot a product
+package: MD8D
+type: module
+core: 8.x
+dependencies:
+ - iai_product

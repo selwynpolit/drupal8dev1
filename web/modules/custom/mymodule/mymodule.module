@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Custom module that alters forms.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use \Drupal\Core\Block\BlockPluginInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function mymodule_form_system_site_information_settings_alter(&$form, FormStateInterface $form_state) {
+
+  $form['site_phone'] = [
+    '#type' => 'tel',
+    '#title' => t('Site phone'),
+    '#default_value' => Drupal::config('system.site')->get('phone'),
+  ];
+
+  $form['#submit'][] = 'mymodule_system_site_information_phone_submit';
+
+}
+
+/**
+ * Form callback to save site_phone.
+ *
+ * @param array $form
+ *   Passed in.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   State of the form.
+ */
+function mymodule_system_site_information_phone_submit(array &$form, FormStateInterface $form_state) {
+  $config = Drupal::configFactory()->getEditable('system.site');
+  $config->set('phone', $form_state->getValue('site_phone'))
+    ->save();
+}
+
+/**
+ * Implements hook_block_alter().
+ */
+function mymodule_block_alter(&$definitions) {
+  $definitions['user_login_block']['admin_label'] = t('Login');
+}
+
+
+/**
+ * Implements hook_block_build_alter().
+ */
+function hook_block_build_alter(array &$build, BlockPluginInterface $block) {
+  // Add the 'url' cache the block per URL.
+  if ($block->getBaseId() == 'myblock') {
+    $build['#contexts'][] = 'url';
+  }
+}

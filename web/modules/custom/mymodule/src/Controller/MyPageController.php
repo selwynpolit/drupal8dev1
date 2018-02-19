@@ -26,7 +26,7 @@ class MyPageController extends ControllerBase {
    */
   public function customPage() {
     return [
-      '#markup' => t('Welcome to my custom page!'),
+      '#markup' => t('Welcome to yur custom page on toasted!'),
     ];
   }
 }

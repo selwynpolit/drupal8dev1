@@ -1,0 +1,7 @@
+<?php
+
+function mymodule_update_8001() {
+  $contact_form = \Drupal\contact\Entity\ContactForm::load('contactus');
+  $contact_form->setReply(t('Thanks you for contacting us, we will reply shortyly'));
+  $contact_form->save();
+}

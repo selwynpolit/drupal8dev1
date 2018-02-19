@@ -1,0 +1,9 @@
+# Schema for the configuration files of the IAI water eco action module.
+
+block.settings.ecoaction_block:
+  type: block_settings
+  label: 'Eco Action block'
+  mapping:
+    block_count:
+      type: integer
+      label: 'Block count'

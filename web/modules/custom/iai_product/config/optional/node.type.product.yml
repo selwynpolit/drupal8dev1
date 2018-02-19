@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Product
+type: product
+description: 'Use this content type for all of IAI''s products. It is defined by a custom module and is expected to contain certain fields as defined by the module.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

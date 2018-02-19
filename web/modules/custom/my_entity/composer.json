@@ -1,0 +1,14 @@
+{
+  "name": "drupal/my_entity",
+  "type": "drupal-module",
+  "description": "Learning D8 Entity API",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/my_entity",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/my_entity",
+    "source": "http://cgit.drupalcode.org/my_entity"
+  },
+  "require": { }
+}

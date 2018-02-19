@@ -1,0 +1,8 @@
+name: Water Eco Action
+description: The water_eco_action module with it's cool block and stuff
+package: MD8D
+type: module
+core: 8.x
+dependencies:
+  - node
+  - options
