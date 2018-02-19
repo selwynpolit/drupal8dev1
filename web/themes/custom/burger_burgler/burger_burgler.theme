@@ -1,0 +1,29 @@
+<?php
+
+function burger_burgler_preprocess_node(&$variables) {
+
+  $variables['content']['suck_field'] = array('#type'=>'markup', '#markup'=>'suck field here');
+
+
+  $variables['content']['my_custom_field'] = [
+    '#type' => 'markup',
+    '#markup' => 'Hello - custom field here',
+  ];
+  $variables['custom_variable'] = "Monkeys like bananas";
+  $variables['other_custom_variable'] = "<br/>Monkeys don't like bananas";
+  $variables['content']['field_image']['#suffix'] = "this is a selwyn suffix to the image";
+
+  // Warning - the next line will kill the home page...
+  //  kint($variables);
+
+
+  $burger_list = [
+    ['name' => 'Cheesburger'],
+    ['name' => 'Mushroom Swissburger'],
+    ['name' => 'Jalapeno bugburger'],
+  ];
+  $variables['burgers'] = $burger_list;
+
+}
+
+
