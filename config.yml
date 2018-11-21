@@ -217,7 +217,7 @@ postgresql_users:
 installed_extras:
   - adminer
   # - blackfire
-  # - drupalconsole
+  - drupalconsole
   - drush
   # - elasticsearch
   # - java
@@ -233,7 +233,7 @@ installed_extras:
   # - tideways
   # - upload-progress
   - varnish
-  # - xdebug
+  - xdebug
   # - xhprof # use `tideways` if you're installing PHP 7+
   - tideways
 
