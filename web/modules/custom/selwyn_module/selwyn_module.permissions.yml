@@ -1,0 +1,30 @@
+add bike part entities:
+  title: 'Create new Bike part entities'
+
+administer bike part entities:
+  title: 'Administer Bike part entities'
+  description: 'Allow to access the administration form to configure Bike part entities.'
+  restrict access: true
+
+delete bike part entities:
+  title: 'Delete Bike part entities'
+
+edit bike part entities:
+  title: 'Edit Bike part entities'
+
+view published bike part entities:
+  title: 'View published Bike part entities'
+
+view unpublished bike part entities:
+  title: 'View unpublished Bike part entities'
+
+view all bike part revisions:
+  title: 'View all Bike part revisions'
+
+revert all bike part revisions:
+  title: 'Revert all Bike part revisions'
+  description: 'Role requires permission <em>view Bike part revisions</em> and <em>edit rights</em> for bike part entities in question or <em>administer bike part entities</em>.'
+
+delete all bike part revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Bike part revisions</em> and <em>delete rights</em> for bike part entities in question or <em>administer bike part entities</em>.'

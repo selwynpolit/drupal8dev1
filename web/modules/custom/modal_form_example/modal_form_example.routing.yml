@@ -1,0 +1,27 @@
+modal_form_example.form:
+  path: '/admin/config/example_formzz'
+  defaults:
+    _form: 'Drupal\modal_form_example\Form\ExampleForm'
+    _title: 'Example Form'
+  requirements:
+    _permission: 'administer site configuration'
+
+modal_form_example.open_modal_form:
+  path: '/admin/config/modal_form'
+  defaults:
+    _title: 'Modal Form'
+    _controller: '\Drupal\modal_form_example\Controller\ModalFormExampleController::openModalForm'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
+
+#Close the modal form
+#modal_form_example.close_modal_form:
+#  path: '/admin/close-modal-form'
+#  defaults:
+#    _controller: '\Drupal\modal_form_example\Controller\ModalFormExampleController::closeModalForm'
+#    _title: 'Close modal'
+#  requirements:
+#    _permission: 'access content'
+#    _role: 'administrator'

@@ -1,0 +1,22 @@
+
+crap.workshop_form:
+  path: '/admin/config/crap/workshop'
+  defaults:
+    _form: '\Drupal\crap\Form\WorkshopForm'
+    _title: 'WorkshopForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+
+crap.default_form:
+  path: '/crap/form1'
+  defaults:
+    _form: '\Drupal\crap\Form\DefaultForm'
+    _title: 'DefaultForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

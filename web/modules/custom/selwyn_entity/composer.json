@@ -1,0 +1,14 @@
+{
+  "name": "drupal/selwyn_entity",
+  "type": "drupal-module",
+  "description": "Selwyn Content Entity Experiment",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/selwyn_entity",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/selwyn_entity",
+    "source": "http://cgit.drupalcode.org/selwyn_entity"
+  },
+  "require": { }
+}

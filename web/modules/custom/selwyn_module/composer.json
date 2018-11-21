@@ -1,0 +1,14 @@
+{
+  "name": "drupal/selwyn_module",
+  "type": "drupal-module",
+  "description": "Creating a test content entity",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/selwyn_module",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/selwyn_module",
+    "source": "http://cgit.drupalcode.org/selwyn_module"
+  },
+  "require": { }
+}

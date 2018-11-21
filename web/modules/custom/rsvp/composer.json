@@ -1,0 +1,14 @@
+{
+  "name": "drupal/rsvp",
+  "type": "drupal-module",
+  "description": "Allows users to RSVP for Events and provides a contact list for admins",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/rsvp",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/rsvp",
+    "source": "http://cgit.drupalcode.org/rsvp"
+  },
+  "require": { }
+}

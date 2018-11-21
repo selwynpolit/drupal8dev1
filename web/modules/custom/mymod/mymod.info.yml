@@ -1,0 +1,5 @@
+name: mymod
+type: module
+description: Playing with OSTraining Drupal 8 course
+core: 8.x
+package: ostraining

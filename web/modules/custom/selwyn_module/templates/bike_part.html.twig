@@ -1,0 +1,22 @@
+{#
+/**
+ * @file bike_part.html.twig
+ * Default theme implementation to present Bike part data.
+ *
+ * This template is used when viewing Bike part pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_bike_part()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('bike_part') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

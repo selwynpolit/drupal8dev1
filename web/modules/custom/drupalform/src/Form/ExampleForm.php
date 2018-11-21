@@ -89,6 +89,30 @@ class ExampleForm extends FormBase {
       '#title' => $this->t('Website'),
     ];
 
+    $giftOption = 1;
+    $form['gift'] = [
+      '#type' => 'radios',
+      '#title' => $this->t('Is this a gift?'),
+      '#default_value' => $giftOption,
+      '#options' => [
+        0 => $this->t('Yes'),
+        1 => $this->t('No'),
+      ],
+    ];
+
+    $colorOption = 1;
+    $form['color'] = [
+      '#type' => 'radios',
+      '#title' => $this->t('What color?'),
+      '#default_value' => $colorOption,
+      '#options' => [
+        0 => $this->t('Red'),
+        1 => $this->t('Green'),
+        2 => $this->t('Blue'),
+      ],
+    ];
+
+
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Save'),

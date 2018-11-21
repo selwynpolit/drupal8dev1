@@ -1,0 +1,14 @@
+
+# Bike part menu items definition
+entity.bike_part.collection:
+  title: 'Bike part list'
+  route_name: entity.bike_part.collection
+  description: 'List Bike part entities'
+  parent: system.admin_structure
+  weight: 100
+
+bike_part.admin.structure.settings:
+  title: Bike part settings
+  description: 'Configure Bike part entities'
+  route_name: bike_part.settings
+  parent: system.admin_structure

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains selwyn_entity.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function selwyn_entity_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the selwyn_entity module.
+    case 'help.page.selwyn_entity':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Selwyn Content Entity Experiment') . '</p>';
+      return $output;
+
+    default:
+  }
+}

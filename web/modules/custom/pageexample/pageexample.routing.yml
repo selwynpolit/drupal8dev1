@@ -1,0 +1,13 @@
+pageexample_description:
+  path: 'selwyn/examples/page_example'
+  defaults:
+    _controller: '\Drupal\pageexample\Controller\PageExampleController::description'
+  requirements:
+    _access: 'TRUE'
+
+pageexample_simple:
+  path: 'selwyn/examples/page_example/simple'
+  defaults:
+    _controller: '\Drupal\pageexample\Controller\PageExampleController::simple'
+  requirements:
+    _access: 'TRUE'

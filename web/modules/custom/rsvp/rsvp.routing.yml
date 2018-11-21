@@ -1,0 +1,30 @@
+#rsvp.form:
+#  path: '/rsvplist'
+#  defaults:
+#    _form: 'Drupal\rsvp\Form\RSVPForm'
+#    _title: 'RSVP to this Event'
+#  requirements:
+#    _permission: 'view rsvplist'
+#    _permission: 'access content'
+
+rsvp.admin_settings:
+  path: '/admin/config/content/rsvp'
+  defaults:
+    _form: 'Drupal\rsvp\Form\RSVPConfigurationForm'
+    _title: 'RSVP Configuration Settings'
+  requirements:
+    _permission: 'administer rsvplist'
+  options:
+    _admin_route: TRUE
+
+rsvp.report:
+  path: '/admin/reports/rsvplist'
+  defaults:
+    _controller: '\Drupal\rsvp\Controller\ReportController::report'
+    _title: 'List of RSVPs'
+  requirements:
+    _permission: 'access rsvplist report'
+
+
+
+

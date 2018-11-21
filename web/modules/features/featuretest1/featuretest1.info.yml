@@ -1,0 +1,14 @@
+name: featuretest1
+description: 'selwyn test feature #1'
+type: module
+core: 8.x
+dependencies:
+  - comment
+  - field
+  - image
+  - node
+  - path
+  - rdf
+  - text
+  - user
+version: 8.x-1.0

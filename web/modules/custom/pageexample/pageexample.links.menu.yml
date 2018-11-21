@@ -1,0 +1,8 @@
+pageexample.description:
+  title: 'Page Example'
+  route_name: pageexample_description
+  parent: system.admin_reports
+pageexample.simple:
+  title: 'Simple page example - no arguments'
+  route_name: pageexample_simple
+  parent: system.admin_reports

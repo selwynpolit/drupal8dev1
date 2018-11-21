@@ -1,0 +1,4 @@
+services:
+  rsvp.enabler:
+    class: Drupal\rsvp\EnablerService
+    arguments: []

@@ -1,0 +1,5 @@
+name: crap
+type: module
+description: crap on toast
+core: 8.x
+package: selwyn

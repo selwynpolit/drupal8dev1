@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains selwyn_module.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function selwyn_module_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the selwyn_module module.
+    case 'help.page.selwyn_module':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Creating a test content entity') . '</p>';
+      return $output;
+
+    default:
+  }
+}

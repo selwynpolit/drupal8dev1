@@ -1,0 +1,27 @@
+# Bike part routing definition
+bike_part.settings_tab:
+  route_name: bike_part.settings
+  title: 'Settings'
+  base_route: bike_part.settings
+
+entity.bike_part.canonical:
+  route_name: entity.bike_part.canonical
+  base_route: entity.bike_part.canonical
+  title: 'View'
+
+entity.bike_part.edit_form:
+  route_name: entity.bike_part.edit_form
+  base_route: entity.bike_part.canonical
+  title: 'Edit'
+
+entity.bike_part.version_history:
+  route_name: entity.bike_part.version_history
+  base_route: entity.bike_part.canonical
+  title: 'Revisions'
+
+entity.bike_part.delete_form:
+  route_name:  entity.bike_part.delete_form
+  base_route:  entity.bike_part.canonical
+  title: Delete
+  weight: 10
+

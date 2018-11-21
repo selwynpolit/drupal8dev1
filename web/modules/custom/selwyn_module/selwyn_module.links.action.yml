@@ -1,0 +1,5 @@
+entity.bike_part.add_form:
+  route_name: entity.bike_part.add_form
+  title: 'Add Bike part'
+  appears_on:
+    - entity.bike_part.collection

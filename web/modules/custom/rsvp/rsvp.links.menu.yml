@@ -1,0 +1,20 @@
+#rsvp.yomama_form:
+#  title: 'YomamaForm'
+#  route_name: rsvp.yomama_form
+#  description: 'blah blah blah'
+#  parent: system.admin_config_system
+#  weight: 99
+rsvp.admin_settings:
+  title: 'RSVP List Setttings'
+  description: 'Control the display of the RSVP form'
+  route_name: rsvp.admin_settings
+  parent: system.admin_config_content
+  weight: 10
+
+rsvp.report:
+  title: 'List of RSVP submissions'
+  description: 'View listing of RSVPS'
+  route_name: rsvp.report
+  parent: system.admin_reports
+  weight: 0
+

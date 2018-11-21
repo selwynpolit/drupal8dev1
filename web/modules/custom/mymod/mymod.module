@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains mymod.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function mymod_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mymod module.
+    case 'help.page.mymod':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Playing with OSTraining Drupal 8 course') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mymod_theme() {
+  return [
+    'mymod' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+function mymod_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'comment_comment_form') {
+
+    $node = \Drupal::request()->attributes->get('node');
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $typeName = $node->bundle();
+    $typeLabel = $node->getTitle();
+
+    $form['actions']['submit']['#value'] = t('CommentItBabe');
+  }
+}

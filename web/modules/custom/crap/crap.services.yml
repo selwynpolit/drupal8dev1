@@ -1,0 +1,5 @@
+services:
+  crap.datemunger:
+    class: Drupal\crap\DateMunger
+    arguments: []
+

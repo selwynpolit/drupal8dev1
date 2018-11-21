@@ -1,0 +1,11 @@
+#Schema for config file of rsvp module
+rsvp.admin_settings:
+  type: config_object
+  label: 'RSVP Content Type Settings'
+  mapping:
+    allowed_types:
+      type: sequence
+      label: 'Content types RSVP form can display on'
+      sequence:
+        type: string
+        label: 'Content type'

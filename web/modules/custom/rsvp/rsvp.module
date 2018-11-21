@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * Contains rsvp.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+/**
+ * Implements hook_help().
+ */
+function rsvp_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the rsvp module.
+    case 'help.page.rsvp':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Allows users to RSVP for Events and provides a contact list for admins') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function rsvp_theme() {
+  return [
+    'rsvp' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+function rsvp_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $node = $form_state->getFormObject()->getEntity();
+  $current_node_type = $node->getType();
+  $config = \Drupal::config('rsvp.settings');
+  $types = $config->get('allowed_types', array());
+  // RSVP Options for administrators
+  if (in_array($current_node_type, $types)) {
+    $form['rsvplist'] = [
+      '#type' => 'details',
+      '#title' => t('RSVP Collection'),
+      '#access' => \Drupal::currentUser()->hasPermission('administer rsvplist'),
+      '#group' => 'advanced',
+      '#weight' => 100,
+    ];
+    /** @var \Drupal\rsvp\EnablerService $enabler */
+    $enabler = \Drupal::service('rsvp.enabler');
+    $form['rsvplist']['rsvplist_enabled'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Collect RSVP e-mail addresses for this node.'),
+      '#default_value' => $enabler->isEnabled($node),
+    ];
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit' ) {
+        $form['actions'][$action]['#submit'][] = 'rsvp_form_node_form_submit';
+      }
+    }
+  }
+
+//  $node = Node::load(1);
+
+}
+
+function rsvp_form_node_form_submit(array $form, FormStateInterface $form_state) {
+  /** @var \Drupal\rsvp\EnablerService $enabler */
+  $enabler = \Drupal::service('rsvp.enabler');
+  $node = $form_state->getFormObject()->getEntity();
+  if ($enabled = $form_state->getValue('rsvplist_enabled')) {
+    $enabler->setEnabled($node);
+  }
+  else {
+    $enabler->delEnabled($node);
+  }
+}

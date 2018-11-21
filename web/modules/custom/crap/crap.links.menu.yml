@@ -1,0 +1,14 @@
+crap.workshop_form:
+  title: 'WorkshopForm'
+  route_name: crap.workshop_form
+  description: 'Paste in workshop infor'
+  parent: system.admin_config_system
+  weight: 99
+
+crap.default_form:
+  title: 'form1'
+  route_name: crap.default_form
+  description: 'form1 description here'
+  parent: system.admin_config_system
+  weight: 99
+

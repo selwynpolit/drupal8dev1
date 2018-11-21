@@ -1,0 +1,5 @@
+name: Ajax Form Submit Example
+type: module
+description: demo Drupal ajax submit (from https://drupal-up.com/blog/drupal-8-ajax-form-submit-example)
+core: 8.x
+package: selwyn

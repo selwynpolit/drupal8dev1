@@ -1,0 +1,5 @@
+name: Field Stuff
+type: module
+description: Custom fields types and more from the Drupal 8 cookbook
+core: 8.x
+package: Drupal 8 Cookbook

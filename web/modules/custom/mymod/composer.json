@@ -1,0 +1,14 @@
+{
+  "name": "drupal/mymod",
+  "type": "drupal-module",
+  "description": "Playing with OSTraining Drupal 8 course",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/mymod",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/mymod",
+    "source": "http://cgit.drupalcode.org/mymod"
+  },
+  "require": { }
+}

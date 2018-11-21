@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains crap.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function crap_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the crap module.
+    case 'help.page.crap':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('crap on toast') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function crap_theme() {
+  return [
+    'crap' => [
+      'render element' => 'children',
+    ],
+  ];
+}
