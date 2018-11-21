@@ -1,0 +1,20 @@
+uuid: 841838b0-7816-4658-a636-4a067aaa7920
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: -10
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'edit any article content'
+  - 'restful get iai_wea'
+  - 'restful get iai_wea_resource'
+  - 'search content'
+  - 'use text format restricted_html'
+  - 'view rsvplist'

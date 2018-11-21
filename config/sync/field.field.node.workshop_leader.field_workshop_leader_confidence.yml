@@ -1,0 +1,23 @@
+uuid: 09970507-9316-4a02-ac46-3891eae8f726
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_workshop_leader_confidence
+    - node.type.workshop_leader
+  module:
+    - options
+id: node.workshop_leader.field_workshop_leader_confidence
+field_name: field_workshop_leader_confidence
+entity_type: node
+bundle: workshop_leader
+label: 'Workshop Leader Confidence'
+description: 'Specify confidence level that this workshop leader is a real person and not a computer error.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

@@ -1,0 +1,18 @@
+uuid: df3154d2-ac5b-4f91-ba30-86cec0b7bc29
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Staff Page'
+type: staff_page
+description: 'Testing content type to play with config management'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

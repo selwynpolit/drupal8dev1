@@ -1,0 +1,39 @@
+uuid: 7d5f4ea5-ba19-4c9e-8a24-15fbbaacebd7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_workshop_leader_confidence
+field_name: field_workshop_leader_confidence
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: '0 - No confidence'
+    -
+      value: 1
+      label: '1 - Reserved'
+    -
+      value: 2
+      label: '2 - Reserved'
+    -
+      value: 3
+      label: '3 - Reserved'
+    -
+      value: 4
+      label: '4 - Found on RC website'
+    -
+      value: 5
+      label: '5 - Found on RC website and confirmed'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

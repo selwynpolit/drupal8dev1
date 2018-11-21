@@ -1,0 +1,18 @@
+uuid: b39c59a4-beab-42cf-a897-117894048542
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: test
+type: test
+description: test
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

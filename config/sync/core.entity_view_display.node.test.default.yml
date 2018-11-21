@@ -1,0 +1,50 @@
+uuid: 5d84ba92-663d-4da4-a176-27bb994611d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.test.body
+    - field.field.node.test.field_comment
+    - field.field.node.test.field_real_name_b
+    - node.type.test
+  module:
+    - comment
+    - fieldstuff
+    - text
+    - user
+id: node.test.default
+targetEntityType: node
+bundle: test
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_comment:
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_real_name_b:
+    weight: 103
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: realname_one_line
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

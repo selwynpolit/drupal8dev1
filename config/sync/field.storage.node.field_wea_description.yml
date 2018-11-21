@@ -1,0 +1,21 @@
+uuid: a8d21326-84a2-45f8-be04-6c8e1ee1a3c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: WlihJfIO5EmbxiVMz17JZwEEK9BDWdnxgaNxlzGpq_c
+id: node.field_wea_description
+field_name: field_wea_description
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,17 @@
+uuid: 1b7e8bb2-116b-43d8-ba88-bf0a16dfd16f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Water Eco Action'
+type: water_eco_action
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,20 @@
+uuid: 61aec5e0-7ab0-4904-90bf-c3c198fbbe9a
+langcode: en
+status: true
+dependencies:
+  module:
+    - hello_world
+  theme:
+    - burger_burgler
+id: burger_burgler_helloworldsalutation
+theme: burger_burgler
+region: sidebar_first
+weight: 0
+provider: null
+plugin: hello_world_salutation_block
+settings:
+  id: hello_world_salutation_block
+  label: 'Hello world salutation'
+  provider: hello_world
+  label_display: visible
+visibility: {  }

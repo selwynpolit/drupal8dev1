@@ -1,0 +1,32 @@
+uuid: dc95e56b-3538-49a4-a25c-8aab03b5c723
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.aquifer_listing
+  module:
+    - ctools
+    - views
+  theme:
+    - mytheme
+id: mytheme_views_block__aquifer_listing_block_1
+theme: mytheme
+region: header
+weight: 0
+provider: null
+plugin: 'views_block:aquifer_listing-block_1'
+settings:
+  id: 'views_block:aquifer_listing-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      aquifer: aquifer
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

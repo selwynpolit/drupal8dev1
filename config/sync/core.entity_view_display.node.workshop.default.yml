@@ -1,0 +1,94 @@
+uuid: 332272b6-0aaa-485e-971e-a9a965ea7848
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.workshop.field_workshop_audience
+    - field.field.node.workshop.field_workshop_country
+    - field.field.node.workshop.field_workshop_end_date
+    - field.field.node.workshop.field_workshop_leader_ref
+    - field.field.node.workshop.field_workshop_location
+    - field.field.node.workshop.field_workshop_original_posting
+    - field.field.node.workshop.field_workshop_start_date
+    - field.field.node.workshop.field_workshop_type
+    - node.type.workshop
+  module:
+    - datetime
+    - options
+    - user
+id: node.workshop.default
+targetEntityType: node
+bundle: workshop
+mode: default
+content:
+  field_workshop_audience:
+    weight: 5
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_workshop_country:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_workshop_end_date:
+    weight: 1
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_workshop_leader_ref:
+    weight: 9
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_workshop_location:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_workshop_original_posting:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_workshop_start_date:
+    weight: 0
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_workshop_type:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  links:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

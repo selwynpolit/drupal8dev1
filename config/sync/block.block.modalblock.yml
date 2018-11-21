@@ -1,0 +1,20 @@
+uuid: 12a5191e-f4b7-4eb8-92ff-95f5e70814d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_modal
+  theme:
+    - bartik
+id: modalblock
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: modal_block
+settings:
+  id: modal_block
+  label: 'Modal block'
+  provider: custom_modal
+  label_display: visible
+visibility: {  }

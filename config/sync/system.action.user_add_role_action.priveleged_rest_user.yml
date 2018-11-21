@@ -1,0 +1,14 @@
+uuid: bdf00d03-d25f-4d38-8eaa-335aa9529538
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.priveleged_rest_user
+  module:
+    - user
+id: user_add_role_action.priveleged_rest_user
+label: 'Add the Priveleged REST User role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: priveleged_rest_user

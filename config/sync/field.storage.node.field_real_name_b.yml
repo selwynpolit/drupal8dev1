@@ -1,0 +1,19 @@
+uuid: 8db0c152-8fa2-402b-b1b4-b37b90ba3f6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - fieldstuff
+    - node
+id: node.field_real_name_b
+field_name: field_real_name_b
+entity_type: node
+type: realname
+settings: {  }
+module: fieldstuff
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

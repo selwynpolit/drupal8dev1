@@ -1,0 +1,10 @@
+uuid: feed8616-900c-4429-8a2a-5207f14eaf26
+langcode: en
+status: true
+dependencies: {  }
+id: priveleged_rest_user
+label: 'Priveleged REST User'
+weight: -8
+is_admin: null
+permissions:
+  - 'create water_eco_action content'

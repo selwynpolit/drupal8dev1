@@ -1,0 +1,37 @@
+uuid: 3f7f19ca-e1a0-401f-8ebb-58eca95a5156
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.workshop.field_workshop_audience
+    - field.field.node.workshop.field_workshop_country
+    - field.field.node.workshop.field_workshop_end_date
+    - field.field.node.workshop.field_workshop_leader_ref
+    - field.field.node.workshop.field_workshop_location
+    - field.field.node.workshop.field_workshop_original_posting
+    - field.field.node.workshop.field_workshop_start_date
+    - field.field.node.workshop.field_workshop_type
+    - node.type.workshop
+  module:
+    - user
+id: node.workshop.teaser
+targetEntityType: node
+bundle: workshop
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_workshop_audience: true
+  field_workshop_country: true
+  field_workshop_end_date: true
+  field_workshop_leader_ref: true
+  field_workshop_location: true
+  field_workshop_original_posting: true
+  field_workshop_start_date: true
+  field_workshop_type: true
+  langcode: true

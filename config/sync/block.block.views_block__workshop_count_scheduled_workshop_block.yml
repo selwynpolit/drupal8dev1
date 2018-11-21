@@ -1,0 +1,30 @@
+uuid: f606c8b6-7c45-46ba-9bd8-3cfcbf5c6872
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.workshop_count
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: views_block__workshop_count_scheduled_workshop_block
+theme: bartik
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'views_block:workshop_count-scheduled_workshop_block'
+settings:
+  id: 'views_block:workshop_count-scheduled_workshop_block'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /workshop-list
+    negate: false
+    context_mapping: {  }

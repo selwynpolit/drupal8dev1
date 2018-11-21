@@ -1,0 +1,29 @@
+uuid: 917030af-c948-4cdc-b9fe-5b8614e39cb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.workshop_leader.field_workshop_leader_confidence
+    - node.type.workshop_leader
+  module:
+    - options
+    - user
+id: node.workshop_leader.default
+targetEntityType: node
+bundle: workshop_leader
+mode: default
+content:
+  field_workshop_leader_confidence:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

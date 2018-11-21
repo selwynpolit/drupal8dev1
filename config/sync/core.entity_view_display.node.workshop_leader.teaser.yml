@@ -1,0 +1,23 @@
+uuid: 6cd6a93e-6d85-4712-88b0-7866ac7af20d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.workshop_leader.field_workshop_leader_confidence
+    - node.type.workshop_leader
+  module:
+    - user
+id: node.workshop_leader.teaser
+targetEntityType: node
+bundle: workshop_leader
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_workshop_leader_confidence: true
+  langcode: true

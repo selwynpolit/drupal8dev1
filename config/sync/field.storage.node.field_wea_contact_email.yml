@@ -1,0 +1,20 @@
+uuid: e5748777-9691-4d58-86a1-4b9a4c5a5437
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 4e4X--9Zzres-3pSIk8JjPiQWKN2m-AePm34olJkWLQ
+id: node.field_wea_contact_email
+field_name: field_wea_contact_email
+entity_type: node
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

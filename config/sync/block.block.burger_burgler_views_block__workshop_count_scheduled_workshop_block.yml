@@ -1,0 +1,30 @@
+uuid: 79b9e729-6f5a-41f6-a000-da053543f8df
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.workshop_count
+  module:
+    - system
+    - views
+  theme:
+    - burger_burgler
+id: burger_burgler_views_block__workshop_count_scheduled_workshop_block
+theme: burger_burgler
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'views_block:workshop_count-scheduled_workshop_block'
+settings:
+  id: 'views_block:workshop_count-scheduled_workshop_block'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /workshop-list
+    negate: false
+    context_mapping: {  }

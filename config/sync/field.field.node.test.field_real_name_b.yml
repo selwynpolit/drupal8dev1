@@ -1,0 +1,24 @@
+uuid: f62bd19d-6e64-40e6-b34f-456bc6ba76cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_real_name_b
+    - node.type.test
+  module:
+    - fieldstuff
+id: node.test.field_real_name_b
+field_name: field_real_name_b
+entity_type: node
+bundle: test
+label: 'Real Name B'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    first_name: ''
+    last_name: ''
+default_value_callback: ''
+settings: {  }
+field_type: realname

@@ -1,0 +1,14 @@
+uuid: f5730b50-6c60-48bf-abb1-252d2390ce81
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_title
+label: 'Node Title'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

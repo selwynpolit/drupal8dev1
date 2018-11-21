@@ -1,0 +1,33 @@
+uuid: 09a70270-afd5-4a57-a924-10f00dd38d2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.user_guide_pages_referencing_a_product
+  module:
+    - node
+    - views
+  theme:
+    - burger_burgler
+id: burger_burgler_views_block__user_guide_pages_referencing_a_product_block_1
+theme: burger_burgler
+region: sidebar_first
+weight: -2
+provider: null
+plugin: 'views_block:user_guide_pages_referencing_a_product-block_1'
+settings:
+  id: 'views_block:user_guide_pages_referencing_a_product-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

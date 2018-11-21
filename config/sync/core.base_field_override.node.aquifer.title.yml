@@ -1,0 +1,18 @@
+uuid: 3e69ed8c-154c-433b-943d-303ffdd7a39e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.aquifer
+id: node.aquifer.title
+field_name: title
+entity_type: node
+bundle: aquifer
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

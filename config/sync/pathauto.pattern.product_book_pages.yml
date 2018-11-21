@@ -1,0 +1,22 @@
+uuid: 2aab78b4-af1e-434a-9f93-0d2f43d2e8c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: product_book_pages
+label: 'product book pages'
+type: 'canonical_entities:node'
+pattern: 'documentation/[node:field_product]/[node:title]'
+selection_criteria:
+  2dcb1290-e0c8-4b31-abf0-3ccb7321d254:
+    id: node_type
+    bundles:
+      book: book
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 2dcb1290-e0c8-4b31-abf0-3ccb7321d254
+selection_logic: and
+weight: -5
+relationships: {  }

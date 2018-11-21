@@ -1,0 +1,15 @@
+uuid: 4e2932f3-e0b2-4b70-af4c-52012b73c971
+langcode: en
+status: true
+dependencies: {  }
+name: burger_wide
+label: 'burger wide'
+effects:
+  32aa0c9a-7528-48fb-8e69-25ce777fc39e:
+    uuid: 32aa0c9a-7528-48fb-8e69-25ce777fc39e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1000
+      height: 300
+      anchor: center-center

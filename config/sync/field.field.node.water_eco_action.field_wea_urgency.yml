@@ -1,0 +1,23 @@
+uuid: 754becb8-8edf-4ba1-ae8b-dad496b028be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wea_urgency
+    - node.type.water_eco_action
+  module:
+    - options
+id: node.water_eco_action.field_wea_urgency
+field_name: field_wea_urgency
+entity_type: node
+bundle: water_eco_action
+label: Urgency
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: normal
+default_value_callback: ''
+settings: {  }
+field_type: list_string

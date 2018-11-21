@@ -1,0 +1,22 @@
+uuid: 8c53f5e5-fc55-450d-bc79-44bd638b1834
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - burger_burgler
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: burger_burgler_powered
+theme: burger_burgler
+region: footer_fifth
+weight: -9
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

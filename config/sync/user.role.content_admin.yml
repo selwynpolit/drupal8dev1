@@ -1,0 +1,18 @@
+uuid: fec8dbb7-397a-4ec3-8362-c70c8b1923a3
+langcode: en
+status: true
+dependencies: {  }
+id: content_admin
+label: 'Content Admin'
+weight: -7
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'add simple_oauth entities'
+  - 'administer content types'
+  - 'administer nodes'
+  - 'administer simple_oauth entities'
+  - 'bypass node access'
+  - 'delete own simple_oauth entities'
+  - 'update own simple_oauth entities'
+  - 'view own simple_oauth entities'

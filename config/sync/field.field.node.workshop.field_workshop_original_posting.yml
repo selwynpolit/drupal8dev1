@@ -1,0 +1,19 @@
+uuid: 9592ea92-9afd-4f56-a195-60814e07ef73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_workshop_original_posting
+    - node.type.workshop
+id: node.workshop.field_workshop_original_posting
+field_name: field_workshop_original_posting
+entity_type: node
+bundle: workshop
+label: 'Original posting'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

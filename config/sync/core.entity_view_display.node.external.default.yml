@@ -1,0 +1,54 @@
+uuid: 9a18077c-0bee-44d9-a11b-19f3a662000a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.external.body
+    - field.field.node.external.field_image
+    - field.field.node.external.field_url
+    - node.type.external
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.external.default
+targetEntityType: node
+bundle: external
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_url:
+    weight: 102
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

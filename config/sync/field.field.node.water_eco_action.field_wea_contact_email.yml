@@ -1,0 +1,19 @@
+uuid: 579d3010-78ec-4968-bc5e-fe2dd97fc7c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wea_contact_email
+    - node.type.water_eco_action
+id: node.water_eco_action.field_wea_contact_email
+field_name: field_wea_contact_email
+entity_type: node
+bundle: water_eco_action
+label: 'Contact Email'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

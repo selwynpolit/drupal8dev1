@@ -1,0 +1,22 @@
+uuid: 86844eb8-e431-48be-a4df-cb60d0d0cf99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.water_eco_action
+  module:
+    - text
+id: node.water_eco_action.body
+field_name: body
+entity_type: node
+bundle: water_eco_action
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

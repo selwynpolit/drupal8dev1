@@ -1,0 +1,29 @@
+uuid: fdc77371-7510-477b-97bd-f28bc36e0b19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_workshop_leader_ref
+    - node.type.workshop
+    - node.type.workshop_leader
+id: node.workshop.field_workshop_leader_ref
+field_name: field_workshop_leader_ref
+entity_type: node
+bundle: workshop
+label: 'Leader Ref'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      workshop_leader: workshop_leader
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: dd3ba233-1239-408b-862a-87b7466517fc
+langcode: en
+status: true
+dependencies:
+  theme:
+    - burger_burgler
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: burger_burgler_local_actions
+theme: burger_burgler
+region: content
+weight: -9
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

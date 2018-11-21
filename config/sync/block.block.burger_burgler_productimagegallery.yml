@@ -1,0 +1,23 @@
+uuid: e1464574-29e3-4314-8e9d-77ca4d29ac09
+langcode: en
+status: true
+dependencies:
+  module:
+    - iai_pig
+  theme:
+    - burger_burgler
+id: burger_burgler_productimagegallery
+theme: burger_burgler
+region: sidebar_first
+weight: -7
+provider: null
+plugin: iai_product_image_gallery
+settings:
+  id: iai_product_image_gallery
+  label: 'Product Image Gallery'
+  provider: iai_pig
+  label_display: visible
+  block_count: '4'
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility: {  }

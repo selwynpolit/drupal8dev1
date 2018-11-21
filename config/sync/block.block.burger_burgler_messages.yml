@@ -1,0 +1,22 @@
+uuid: 06b60647-8f4e-4a4e-896b-dc140af06845
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - burger_burgler
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: burger_burgler_messages
+theme: burger_burgler
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

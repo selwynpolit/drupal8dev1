@@ -1,0 +1,21 @@
+uuid: fba356c6-0e89-4ea6-bf08-9b77eb646981
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_workshop_start_date
+    - node.type.workshop
+  module:
+    - datetime
+id: node.workshop.field_workshop_start_date
+field_name: field_workshop_start_date
+entity_type: node
+bundle: workshop
+label: 'Start Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

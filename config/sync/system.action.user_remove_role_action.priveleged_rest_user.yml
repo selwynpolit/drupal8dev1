@@ -1,0 +1,14 @@
+uuid: 7bceb3a6-1acb-498a-bb67-ad3d14ed8f7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.priveleged_rest_user
+  module:
+    - user
+id: user_remove_role_action.priveleged_rest_user
+label: 'Remove the Priveleged REST User role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: priveleged_rest_user

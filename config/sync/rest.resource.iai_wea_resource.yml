@@ -1,0 +1,23 @@
+uuid: 66799fbc-7176-42b9-a516-bbebc200991f
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - hal
+    - iai_wea
+    - serialization
+    - user
+id: iai_wea_resource
+plugin_id: iai_wea_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - hal_json
+    - json
+    - xml
+  authentication:
+    0: basic_auth
+    2: cookie

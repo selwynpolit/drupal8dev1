@@ -1,0 +1,22 @@
+uuid: 3d72d5ce-40f9-4146-bf77-1c2e4a6f51c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - burger_burgler
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: burger_burgler_help
+theme: burger_burgler
+region: content
+weight: -9
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,29 @@
+uuid: bdc77be1-30b4-451b-bd4d-af18f10ed3b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_use_case
+    - node.type.product
+    - taxonomy.vocabulary.product_use_case
+id: node.product.field_product_use_case
+field_name: field_product_use_case
+entity_type: node
+bundle: product
+label: 'Use Case'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_use_case: product_use_case
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: process_use_case
+field_type: entity_reference
