@@ -1,0 +1,28 @@
+uuid: a8cca6af-a5d9-4d5a-a903-42ba7d838676
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_picture
+    - media.type.remote_image
+    - node.type.remote1
+id: node.remote1.field_picture
+field_name: field_picture
+entity_type: node
+bundle: remote1
+label: Picture
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_image: remote_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

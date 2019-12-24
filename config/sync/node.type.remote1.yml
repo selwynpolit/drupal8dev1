@@ -1,0 +1,18 @@
+uuid: 70aefb55-f4a5-40d1-8931-d478b9a5e390
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: remote1
+type: remote1
+description: 'Content type that has remote images'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

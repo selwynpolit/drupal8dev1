@@ -1,0 +1,11 @@
+uuid: dfd19a2c-4074-46d1-8287-4772d9f801e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_image
+id: media.remote_image
+target_entity_type_id: media
+target_bundle: remote_image
+default_langcode: site_default
+language_alterable: false

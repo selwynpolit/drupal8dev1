@@ -35,4 +35,5 @@ permissions:
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view any webform submission'
+  - 'view media'
   - 'view own webform submission'

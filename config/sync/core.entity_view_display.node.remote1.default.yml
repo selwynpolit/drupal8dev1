@@ -1,0 +1,49 @@
+uuid: 1c030878-01ae-4ea0-a883-4aa0eb939182
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.remote1.body
+    - field.field.node.remote1.field_media_field
+    - field.field.node.remote1.field_picture
+    - node.type.remote1
+  module:
+    - text
+    - user
+id: node.remote1.default
+targetEntityType: node
+bundle: remote1
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_media_field:
+    type: entity_reference_entity_view
+    weight: 102
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_picture:
+    type: entity_reference_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

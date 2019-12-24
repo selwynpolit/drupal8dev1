@@ -6,11 +6,14 @@ dependencies:
     - core.entity_view_display.comment.comment.default
     - field.field.node.test.body
     - field.field.node.test.field_comment
+    - field.field.node.test.field_link
+    - field.field.node.test.field_media1
     - field.field.node.test.field_real_name_b
     - node.type.test
   module:
     - comment
     - fieldstuff
+    - link
     - text
     - user
 id: node.test.default
@@ -25,6 +28,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_comment:
     weight: 102
     label: above
@@ -33,6 +41,27 @@ content:
       pager_id: 0
     third_party_settings: {  }
     type: comment_default
+    region: content
+  field_link:
+    weight: 104
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_media1:
+    type: entity_reference_entity_view
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     region: content
   field_real_name_b:
     weight: 103

@@ -1,0 +1,31 @@
+uuid: 44e7750b-d2f3-4871-a508-04442a7904da
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.remote1.body
+    - node.type.remote1
+  module:
+    - text
+    - user
+id: node.remote1.teaser
+targetEntityType: node
+bundle: remote1
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

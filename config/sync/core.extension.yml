@@ -2,7 +2,9 @@ module:
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
+  ajax_example: 0
   ajax_form_submit: 0
+  anchor_link: 0
   automated_cron: 0
   basic_auth: 0
   better_exposed_filters: 0
@@ -18,10 +20,12 @@ module:
   config: 0
   config_devel: 0
   config_filter: 0
+  config_override_warn: 0
   config_split: 0
   config_update: 0
   config_update_ui: 0
   contact: 0
+  content_moderation: 0
   contextual: 0
   ctools: 0
   custom_modal: 0
@@ -31,11 +35,13 @@ module:
   dblog: 0
   devel: 0
   devel_generate: 0
+  diff: 0
   dino_roar: 0
   drupalform: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
+  examples: 0
   features: 0
   features_ui: 0
   field: 0
@@ -57,6 +63,8 @@ module:
   kint: 0
   language: 0
   link: 0
+  media: 0
+  media_library: 0
   menu_ui: 0
   modal_form_example: 0
   module_filter: 0
@@ -70,10 +78,15 @@ module:
   rdf: 0
   realistic_dummy_content: 0
   realistic_dummy_content_api: 0
+  remote_stream_wrapper: 0
+  remote_stream_wrapper_widget: 0
   rest: 0
   restui: 0
   rsvp: 0
   search: 0
+  search_api: 0
+  search_api_db: 0
+  search_api_db_defaults: 0
   serialization: 0
   settings_tray: 0
   shortcut: 0
@@ -86,6 +99,7 @@ module:
   update: 0
   user: 0
   video_embed_field: 0
+  views_tree: 0
   views_ui: 0
   webform: 0
   webform_examples: 0
@@ -93,6 +107,7 @@ module:
   webform_templates: 0
   webform_ui: 0
   webprofiler: 0
+  workflows: 0
   workshops: 0
   contribute: 1
   menu_link_content: 1

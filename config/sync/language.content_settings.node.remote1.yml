@@ -1,0 +1,11 @@
+uuid: 7e12bd2f-5e81-4f58-b6dd-700e20d6df06
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.remote1
+id: node.remote1
+target_entity_type_id: node
+target_bundle: remote1
+default_langcode: site_default
+language_alterable: false

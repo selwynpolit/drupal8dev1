@@ -1,0 +1,11 @@
+uuid: 0f9a6652-b947-4147-9b86-7ca6ad0754e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_portability
+id: taxonomy_term.product_portability
+target_entity_type_id: taxonomy_term
+target_bundle: product_portability
+default_langcode: site_default
+language_alterable: false

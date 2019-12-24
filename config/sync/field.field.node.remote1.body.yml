@@ -1,0 +1,22 @@
+uuid: 9ffc648d-858b-4c2d-affb-0ee517f8ad6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.remote1
+  module:
+    - text
+id: node.remote1.body
+field_name: body
+entity_type: node
+bundle: remote1
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

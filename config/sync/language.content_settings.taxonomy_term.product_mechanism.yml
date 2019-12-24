@@ -1,0 +1,11 @@
+uuid: 6c872b2c-bc8a-477e-b3f5-09e9b0269b33
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_mechanism
+id: taxonomy_term.product_mechanism
+target_entity_type_id: taxonomy_term
+target_bundle: product_mechanism
+default_langcode: site_default
+language_alterable: false
