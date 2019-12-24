@@ -1,0 +1,6 @@
+<?php
+
+function mytheme_preprocess_html(&$variables) {
+//  kint($variables);
+//  var_dump($variables);
+}
