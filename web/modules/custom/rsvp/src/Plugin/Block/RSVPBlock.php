@@ -49,6 +49,14 @@ class RSVPBlock extends BlockBase {
     /** @var \Drupal\node\Entity\Node $node */
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node) {
+
+      // Quick fix for weird error when using content moderation
+      if (is_string($node)) {
+        return AccessResult::forbidden();
+      }
+
+
+
       $nid = $node->id();
       if (is_numeric($nid)) {
         // See rsvp.permissions.yml for the permission string.
